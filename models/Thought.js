@@ -13,8 +13,9 @@ const reactionSchema = new Schema(
 			trim: true,
 		},
 		reactionBy: {
-			type: Schema.Types.ObjectId,
-			ref: "User",
+			type: String,
+			required: true,
+			trim: true,
 		},
 		createdAt: {
 			type: Date,
@@ -35,13 +36,13 @@ const ThoughtSchema = new Schema(
 			type: String,
 			required: [true, "Please tell us what you want to share!"],
 			trim: true,
-			minlength:1,
-			maxlength:280
+			minlength: 1,
+			maxlength: 280,
 		},
 		createdBy: {
-			type: Schema.Types.ObjectId,
-			ref: "User",
+			type: String,
 			required: true,
+			trim: true,
 		},
 		createdAt: {
 			type: Date,
@@ -64,4 +65,4 @@ ThoughtSchema.virtual("reactionCount").get(function () {
 
 const Thought = model("Thought", ThoughtSchema);
 
-model.exports = Thought;
+module.exports = Thought;

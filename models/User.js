@@ -1,4 +1,4 @@
-const { Schema, model, Types } = require("mongoose");
+const { Schema, model } = require("mongoose");
 
 const UserSchema = new Schema(
 	{
@@ -12,13 +12,13 @@ const UserSchema = new Schema(
 			type: String,
 			required: [true, "email is required"],
 			unique: true,
-			validate: {
-				validator: function (v) {
-					//email@yahoo.com
-					return /\{string}\@{string}\.{string}/.test(v);
-				},
-				message: (props) => `${props.value} is not a valid email`,
-			},
+			// validate: {
+			// 	validator: function (v) {
+			// 		//email@yahoo.com
+			// 		return /\{string}\@{string}\.{string}/.test(v);
+			// 	},
+			// 	message: (props) => `${props.value} is not a valid email`,
+			// },
 		},
 		thoughts: [
 			{
@@ -51,4 +51,4 @@ UserSchema.virtual("friendCount").get(function () {
 const User = model("User", UserSchema);
 
 // expoert the user model
-model.exports = User;
+module.exports = User;
