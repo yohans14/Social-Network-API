@@ -12,13 +12,13 @@ const UserSchema = new Schema(
 			type: String,
 			required: [true, "email is required"],
 			unique: true,
-			// validate: {
-			// 	validator: function (v) {
-			// 		//email@yahoo.com
-			// 		return /\{string}\@{string}\.{string}/.test(v);
-			// 	},
-			// 	message: (props) => `${props.value} is not a valid email`,
-			// },
+			validate: {
+				validator: function (v) {
+					//email@yahoo.com
+					return /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(v);
+				},
+				message: (props) => `${props.value} is not a valid email`,
+			},
 		},
 		thoughts: [
 			{
@@ -44,13 +44,7 @@ const UserSchema = new Schema(
 UserSchema.virtual("friendCount").get(function () {
 	return this.friends.length;
 });
-// get total thought count
-UserSchema.virtual("thoughtsCount").get(function () {
-	return this.thoughts.reduce(
-		(total, thoughts) => total + thoughts.replies.length + 1,
-		0
-	);
-});
+
 // create the User model using UserSchema
 const User = model("User", UserSchema);
 

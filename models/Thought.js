@@ -11,8 +11,10 @@ const reactionSchema = new Schema(
 			type: String,
 			required: [true, "please inclued your reaction text!"],
 			trim: true,
+			minlength: 1,
+			maxlength: 280,
 		},
-		reactionBy: {
+		username: {
 			type: String,
 			required: true,
 			trim: true,
@@ -39,15 +41,15 @@ const ThoughtSchema = new Schema(
 			minlength: 1,
 			maxlength: 280,
 		},
-		createdBy: {
-			type: String,
-			required: true,
-			trim: true,
-		},
 		createdAt: {
 			type: Date,
 			default: Date.now,
 			get: (createdAtVal) => dateFormat(createdAtVal),
+		},
+		username: {
+			type: String,
+			required: true,
+			trim: true,
 		},
 		reactions: [reactionSchema],
 	},
