@@ -2,7 +2,7 @@
 
 ## Description
 
-This is a back-end for a social network application that uses a NoSQL database so that a website can handle large amounts of unstractured data to proform CRUD operation for creating user, thoughts, react to thoughts, and add/remove friends.  
+This is a back-end for a social network application that uses a NoSQL database so that a website can handle large amounts of unstractured data to proform CRUD operation for creating user, thoughts, react to thoughts, and add/remove friends.
 
 ## Table of Contents
 
@@ -38,19 +38,23 @@ after installation Routes can be tested and put to use with insomnia.
 
 ## Snapshot
 
-<!-- ![project screenshot](./assets/images/e_commerce.png) -->
+![project screenshot](./assets/images/Social-Network-API.png)
 
-The first video shows GET,POST, PUT, and DELETE routes to \_\_ being tested in Insomnia:
+This video shows /api/users for GET ,POST, PUT, and DELETE being tested in Insomnia:
 
-<!-- [Video](https://drive.google.com/file/d/1-vPtG8h2mDqV5hbHO394NAXebzEY1E7g/view) -->
+[Video](https://drive.google.com/file/d/1YhGW1n-htBLoqK7XJyx9wWe312-x9NgV/view)
 
-The first video shows GET,POST, PUT, and DELETE routes to \_\_ being tested in Insomnia:
+This video shows POST, DELETE routes for adding and removing friend being tested in Insomnia:
 
-<!-- [Video](https://drive.google.com/file/d/1carvE-JLrust-SjvLZBnwSVjtUcr4VkT/view) -->
+[Video](https://drive.google.com/file/d/1dYk5pEEnPXFFaujvpDa2O-EmbrakPJYW/view)
 
-The first video shows GET,POST, PUT, and DELETE routes to \_\_ being tested in Insomnia:
+This video shows GET,POST, PUT, and DELETE routes for /api/thoughts/ being tested in Insomnia:
 
-<!-- [Video](https://drive.google.com/file/d/10bsIglwzW0SPo9y-S4_y-XT4tpHlgNPE/view) -->
+[Video](https://drive.google.com/file/d/1k50BD12He1dM_GLzarH_FAdO5Fwi07AN/view)
+
+This video shows POST and DELETE routes, POST to create a reaction stored in a single thought's reactions array field, and DELETE to pull and remove a reaction by the reaction's reactionId value being tested in Insomnia:
+
+[Video](https://drive.google.com/file/d/1Z5GnhYnv99i1dHsOgdXASh7fWnVXmXpE/view)
 
 ## License
 
